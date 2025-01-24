@@ -1,0 +1,14 @@
+version: '3.9'
+
+# Local development environment
+services:
+  db:
+    image: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: paymentdb
+      POSTGRES_USER: resurs
+      POSTGRES_PASSWORD: supersecret
+      POSTGRES_HOST_AUTH_METHOD: trust
