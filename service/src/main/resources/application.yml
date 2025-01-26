@@ -1,0 +1,13 @@
+spring:
+  profiles:
+    active: local
+  application:
+    name: interview
+  datasource:
+    url: jdbc:postgresql://localhost:5432/resursdb
+    username: resurs
+    password: supersecret
+  flyway:
+    default-schema: resurs
+    schemas:
+        - resurs

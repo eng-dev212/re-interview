@@ -1,26 +1,24 @@
 package com.resurs.interview.repository;
 
 import java.util.Optional;
-import com.resurs.interview.entity.Customer;
+import com.resurs.interview.entity.CustomerEntity;
 import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
-import org.springframework.web.client.HttpServerErrorException;
 
 @Repository
 public class PostgresCustomerRepository implements CustomerRepository {
 
     @Override
-    public Optional<Customer> findBySocialSecurityNumber(String ssn) {
+    public Optional<CustomerEntity> findBySocialSecurityNumber(String ssn) {
         throw new RuntimeException("Not Implemented");
     }
 
     @Override
-    public Customer save(Customer customer) {
+    public CustomerEntity save(CustomerEntity customerEntity) {
         throw new RuntimeException("Not Implemented");
     }
 
     @Override
-    public Optional<Customer> findById(Long customerId) {
+    public Optional<CustomerEntity> findById(Long customerId) {
         return Optional.empty();
     }
 }

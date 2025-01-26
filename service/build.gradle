@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.4.2'
+    id 'io.spring.dependency-management' version '1.1.7'
+}
+
+
+group = 'com.resurs'
+version = '0.0.1-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    dependencies {
+        implementation project(':api:customer')
+
+        implementation 'org.springframework.boot:spring-boot-starter-web'
+        implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+        implementation 'org.springframework.boot:spring-boot-starter-actuator'
+        implementation 'org.springframework.boot:spring-boot-starter-cache'
+        implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.3'
+        implementation 'org.flywaydb:flyway-core'
+        implementation 'org.flywaydb:flyway-database-postgresql'
+        runtimeOnly('org.postgresql:postgresql')
+        compileOnly 'org.projectlombok:lombok'
+        annotationProcessor 'org.projectlombok:lombok'
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+        testImplementation 'org.springframework.integration:spring-integration-test'
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
