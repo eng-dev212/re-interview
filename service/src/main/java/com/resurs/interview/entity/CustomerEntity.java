@@ -3,6 +3,7 @@ package com.resurs.interview.entity;
 import com.resurs.interview.customer.v1.api.Customer;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.Instant;
@@ -28,10 +29,11 @@ public class CustomerEntity {
     @Column
     private Integer creditScore;
 
+    @CreationTimestamp
     @Column
-    @UpdateTimestamp
     private Instant createdAt;
 
+    @UpdateTimestamp
     @Column
     private Instant updatedAt;
 

@@ -1,6 +1,8 @@
 package com.resurs.interview.gateway;
 
 import java.util.Random;
+
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -8,6 +10,7 @@ public class MockedTaxCheckGateway  implements TaxCheckGateway {
     private final Random random = new Random();
 
     @Override
+    @Cacheable("tax")
     public int getLastYearTax(String socialSecurityNumber) {
         // Simulate some slowness in the response
         try {
